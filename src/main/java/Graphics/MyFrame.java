@@ -37,10 +37,10 @@ public class MyFrame extends JFrame implements ActionListener{
         jmb = new JMenuBar();
         file = new JMenu("File");
         color = new JMenu("Color");
-        blue = new JMenuItem("Blue");
-        green = new JMenuItem("Green");
-        red = new JMenuItem("Red");
-        quit = new JMenuItem("Quit");
+        blue = new JMenuItem("Blue", KeyEvent.VK_B);
+        green = new JMenuItem("Green", KeyEvent.VK_G);
+        red = new JMenuItem("Red", KeyEvent.VK_R);
+        quit = new JMenuItem("Quit", KeyEvent.VK_Q);
         jp = new JPanel();
         
 
@@ -55,12 +55,8 @@ public class MyFrame extends JFrame implements ActionListener{
     }
 
     private void initGui() {
-        file.setMnemonic(KeyEvent.VK_F);
-        red.setMnemonic(KeyEvent.VK_R);
-        green.setMnemonic(KeyEvent.VK_G);
-        blue.setMnemonic(KeyEvent.VK_B);
+        file.setMnemonic(KeyEvent.VK_F);;
         color.setMnemonic(KeyEvent.VK_C);
-        quit.setMnemonic(KeyEvent.VK_Q);
         red.setAccelerator(
                 KeyStroke.getKeyStroke(
                         KeyEvent.VK_R, 
@@ -92,10 +88,10 @@ public class MyFrame extends JFrame implements ActionListener{
         color.add(red);
         jmb.add(file);
         jmb.add(color);
-        
-        this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
+          
         jp.setPreferredSize(new Dimension(200, 400));
         jp.setOpaque(true);
+        this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
         this.add(jp);
         this.setJMenuBar(jmb);
     }
