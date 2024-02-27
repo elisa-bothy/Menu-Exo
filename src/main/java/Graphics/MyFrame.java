@@ -109,17 +109,12 @@ public class MyFrame extends JFrame implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e){
-        if (e.getActionCommand().equals("Red")){
-            jp.setBackground(Color.RED);
+        switch (e.getActionCommand()) {
+            case "Red" -> jp.setBackground(Color.RED);
+            case "Blue" -> jp.setBackground(Color.blue);
+            case "Green" -> jp.setBackground(Color.GREEN);
+            case "Quit" -> System.exit(0);
         }
-        if (e.getActionCommand().equals("Blue")){
-            jp.setBackground(Color.BLUE);
-        }
-        if (e.getActionCommand().equals("Green")){
-            jp.setBackground(Color.GREEN);
-        }
-        if (e.getActionCommand().equals("Quit")){
-            System.exit(0);
-        }
+        
     }
 }
